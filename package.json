@@ -1,0 +1,19 @@
+{
+  "name": "skyuniversity",
+  "version": "1.0.0",
+  "description": "Background color of logo is: #53e3a6\r Color of the text of Sky is: #58595b",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SherryKhwan/Sky-University.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SherryKhwan/Sky-University/issues"
+  },
+  "homepage": "https://github.com/SherryKhwan/Sky-University#readme"
+}
