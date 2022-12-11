@@ -84,6 +84,7 @@ body{
 .search_box i{
   padding: 0.66rem;
   cursor: pointer;
+  
   color: #fff;
   background: #50a3a2;
   border-top-right-radius: 5px;
