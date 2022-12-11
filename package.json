@@ -1,0 +1,25 @@
+{
+  "name": "sky-university.github.io",
+  "version": "1.0.0",
+  "description": "This is the Sky University Management System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/SherryKhwan/Sky-University.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SherryKhwan/Sky-University.github.io/issues"
+  },
+  "homepage": "https://github.com/SherryKhwan/Sky-University.github.io#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
+  }
+}
