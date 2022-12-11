@@ -1,4 +1,3 @@
-{
   "name": "skyuniversity",
   "version": "1.0.0",
   "description": "Background color of logo is: #53e3a6\r Color of the text of Sky is: #58595b",
@@ -13,7 +12,16 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SherryKhwan/Sky-University/issues"
+    "url": "https://github.com/SherryKhwan/Sky-University.github.io/issues"
+  },
+  "homepage": "https://github.com/SherryKhwan/Sky-University.github.io#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
+  }
+  "url": "https://github.com/SherryKhwan/Sky-University/issues"
   },
   "homepage": "https://github.com/SherryKhwan/Sky-University#readme"
 }

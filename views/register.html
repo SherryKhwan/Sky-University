@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Login
+    </title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1 id="animation">
+                Registration
+            </h1>
+
+            <form class="form" method="POST" id="register_form" action="/register">
+                <input type="text" placeholder="First Name" id="first_name" name="first_name" autocomplete="on">
+                <label id="first-name-message"></label><br>
+                <input type="text" placeholder="Last Name" id="last_name" name="last_name" autocomplete="on">
+                <label id="last-name-message"></label><br>
+                <input type="text" placeholder="Age" id="age" name="age" autocomplete="on">
+                <label id="age-message"></label><br>
+                <input type="text" placeholder="Username" id="username" name="username" autocomplete="on">
+                <label id="username-message"></label><br>
+                <input type="email" placeholder="Email" id="email" name="email" autocomplete="on">
+                <label id="email-message"></label><br>
+                <input type="text" placeholder="Address" id="address" name="address" autocomplete="on">
+                <label id="address-message"></label><br>
+                <input type="text" placeholder="Phone Number" id="mobile_number" name="mobile_number" autocomplete="on">
+                <label id="mobile-message"></label><br>
+                <input type="password" placeholder="Password" id="password" name="password" autocomplete="on">
+                <label id="password-message"></label><br>
+                <input type="password" placeholder="Confirm Password" id="confirm_password" name="confirm_password" autocomplete="on">
+                <label id="confirm-password-message"></label><br>
+                <button type="submit" id="register-button">Register</button>
+            </form>
+            <p class="guide"><i>Already have an account,<a class="checker" href="login.html" target="_self"> sign in </a> here</i>
+            </p>
+            <div class="whitespace">
+            </div>
+        </div>
+        <ul class="bg-bubbles">
+        </ul>
+    </div>
+
+    <script src="scripts/script.js" type="module">
+    </script>
+</body>
+
+</html>
