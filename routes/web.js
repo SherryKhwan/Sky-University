@@ -9,5 +9,7 @@ router.post('/register', UserController.registerUser);
 router.get('/login', UserController.login);
 router.post('/login', UserController.loginUser);
 router.get('/logout', UserController.logout);
-router.get('/users', UserController.dashboard);
+router.get('/dashboard', UserController.dashboard);
+router.get('/details', UserController.getUserDetails);
+router.post('/admission', UserController.admission);
 module.exports = router;

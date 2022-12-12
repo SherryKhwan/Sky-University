@@ -2,7 +2,6 @@ import { loginAction } from "./login.js";
 import { registerAction } from "./register.js";
 import { nameCheck, userNameCheck, addressCheck, emailCheck, mobileCheck, ageCheck, passwordCheck } from "./validation.js";
 
-
 let bubbles = document.getElementsByClassName('bg-bubbles')[0];
 let loginSubmit = document.getElementById('login_form');
 let registerSubmit = document.getElementById('register_form');
@@ -17,16 +16,18 @@ let password = document.getElementById('password');
 let confirmPassword = document.getElementById('confirm_password');
 for (let i = 0; i <= 60; i++) {
     let miniBubble = document.createElement('li');
-    bubbles.appendChild(miniBubble);   
+    if (bubbles) {
+        bubbles.appendChild(miniBubble);   
+    }
 }
 if (loginSubmit) {
     loginSubmit.addEventListener('submit', (event) => {
-        if (userName.value.length == 0 || password.value.length == 0) {
+        if (email.value.length == 0 || password.value.length == 0) {
             event.preventDefault();
             alert('Please enter your email and password');
             return false;
         }
-        if (loginAction(userName.value, password.value)){
+        if (loginAction(email.value)){
             return true
         }
         else{
@@ -36,7 +37,7 @@ if (loginSubmit) {
 }
 if (registerSubmit) {
     registerSubmit.addEventListener('submit', (event) => {
-        if ( userName.value.length == 0 || password.value.length == 0 || email.value.length == 0 || mobile.value.length == 0 || firstName.value.length == 0 || lastName.value.length == 0 || age.value.length == 0 || confirmPassword.value.length == 0 ) {
+        if ( password.value.length == 0 || email.value.length == 0 || confirmPassword.value.length == 0 ) {
             event.preventDefault();
             alert("PLease make sure that all the fields are filled");
             return false;
@@ -46,7 +47,7 @@ if (registerSubmit) {
             event.preventDefault();
             return false;
         }
-        if (registerAction(firstName.value, lastName.value, age.value, userName.value, email.value, mobile.value, password.value)){
+        if (registerAction(email.value)){
             return true
         }
     });

@@ -66,7 +66,7 @@ export function passwordCheck(password, errorElement) {
         setMessage(errorElement, "Password is valid", "green");
     }
     else {
-        setMessage(errorElement, "Password is invalid format, please\n make sure that the password contains\n at least 10 characters, an uppercase\n letter, a lowercase letter, a number\n and a special character", "red");
+        setMessage(errorElement, "Password is invalid format", "red");
     }
 }
 

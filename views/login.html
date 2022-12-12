@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/fevicon.ico">
   <link rel="stylesheet" href="styles/style.css">
   <title>Login</title>
 </head>
@@ -15,13 +16,13 @@
       <h1 id="animation">Login</h1>
 
       <form class="form" method="POST" action="/login" id="login_form">
-        <input type="text" placeholder="Username or email" id="username" name="username" autocomplete="on">
-        <label id="username-message" class="error"></label><br>
+        <input type="text" placeholder="Email" id="email" name="email" autocomplete="on">
+        <label id="email-message" class="error"></label><br>
         <input type="password" placeholder="Password" id="password" name="password" autocomplete="on">
         <label id="password-message" class="error"></label><br>
         <button type="submit" id="login-button">Login</button>
       </form>
-      <p class="guide"><i>Don't have an account, <a class="checker" href="register.html" target="_self">sign up</a> here</i></p>
+      <p class="guide"><i>Don't have an account, <a class="checker" href="/register" target="_self">sign up</a> here</i></p>
     </div>
     <ul class="bg-bubbles">
     </ul>
@@ -30,6 +31,18 @@
   <script src="https://kit.fontawesome.com/da23be1ef0.js" crossorigin="anonymous"></script>
   <!-- Custom JS -->
   <script src="/scripts/script.js" type="module"></script>
+
+  <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    if (getCookie('email') !== undefined || getCookie('role') !== undefined) {
+      window.location.href = '/dashboard';
+    }
+  </script>
 </body>
 
 </html>

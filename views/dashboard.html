@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/fevicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="/styles/dashboard.css" />
     <title>Dashboard</title>
 </head>
 
@@ -15,19 +18,127 @@
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
         }
+        document.addEventListener("load", (event) => {
+            let data = {
+                email: decodeURIComponent(getCookie('email'))
+            }
+            let xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "/details", true);
 
-        if (getCookie('username') === undefined || getCookie('name') === undefined || getCookie('role') === undefined) {
+            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Response
+                    data1 = this.responseText;
+                    console.log(`This is the ${data1}`);
+                }
+            };
+            xhttp.send(data);
+        });
+    </script>
+
+    <header class="header">
+        <div class="logo">
+            <img src="images/Logo.png" alt="" class="log">
+            <div class="search_box">
+                <input type="text" placeholder="Search Dashboard">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+
+        <div class="header-icons">
+            <i class="fas fa-bell"></i>
+            <div class="account">
+                <img src="" alt="">
+                <h4>User</h4>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <nav>
+            <div class="side_navbar">
+                <span>Dashboard</span>
+                <a href="/dashboard">My Account</a>
+                <!-- <a href="#">Results</a> -->
+                <a href="/logout">Logout</a>
+
+                <div class="links">
+                    <span>Quick Link</span>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Website</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-body">
+            <h2>Dashboard</h2>
+            <div class="promo_card">
+                <h1>Welcome back
+                    <script>
+                        document.write(decodeURIComponent(getCookie('email')));
+                    </script>
+                </h1>
+                <span>Here you can add/ edit your personal details</span>
+                <button>Learn More</button>
+            </div>
+
+            <h3>Personal Details</h3>
+            <form action="/admission" method="POST" class="form">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name">
+                <label id="first-name-message"></label><br>
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last"><br>
+                <label id="last-name-message"></label><br>
+                <label for="father_name">Father's Name:</label>
+                <input type="text" id="father_name" name="father_name"><br>
+                <label id="father-name-message"></label><br>
+                <label for="mobile_number">Mobile Number:</label>
+                <input type="text" id="mobile_number" name="mobile_number"><br>
+                <label id="mobile-message"></label><br>
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email"><br>
+                <label id="email-message"></label><br>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" id="dob"><br>
+                <label id="dob-message"></label><br>
+                <label for="program" style="text-align: left;">Select Program:</label>
+                <select name="program" id="program">
+                    <option value="none">None Selected</option>
+                    <option value="se">Software Engineering</option>
+                    <option value="me">Mechanical Engineering</option>
+                    <option value="ee">Electrical Engineering</option>
+                    <option value="ce">Chemical Engineering</option>
+                    <option value="te">Textile Engineering</option>
+                    <option value="be">Biomedical Engineering</option>
+                </select>
+                <label id="program-message"></label><br>
+                <label for="address">Residence:</label>
+                <textarea name="address" id="address" cols="96" rows="5"></textarea><br>
+                <label id="address-message"></label>
+                <input type="submit" value="Submit">
+            </form>
+
+
+        </div>
+    </div>
+
+    <script src="scripts/script.js" type="module"></script>
+
+    <script>
+        if (getCookie('email') === undefined || getCookie('role') === undefined) {
             window.location.href = '/login';
         }
     </script>
-    <h1>Dashboard</h1>
+    <!-- <h1>Dashboard</h1>
     <h3>Welcome,
         <script>
             document.write(getCookie('username'));
         </script>
     </h3>
 
-    <h6>Here, you can log out <a href="/logout">Logout</a></h6>
+    <h6>Here, you can log out <a href="/logout">Logout</a></h6> -->
 
 </body>
 

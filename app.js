@@ -9,11 +9,16 @@ const PORT = 3000;
 const DATABASE_URL = 'mongodb://localhost:27017/ums';
 
 dbConnect.connectDb(DATABASE_URL);
+
 // Linking the static files via express.static() middleware
+
 app.use(express.static('public'));
+
 // app.use(express.bodyParser());
 app.use(express.urlencoded());
+
 app.use(router);
+
 app.use(express.json())
 
 app.use(cookieParser());
